@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React, {useEffect} from 'react';
+import './jitsi'
+const App = () => {
+    useEffect(()=>{
+        const api = new JitsiMeetExternalAPI("8x8.vc", {
+            roomName: "vpaas-magic-cookie-06fc1606174e48f4827cf9e51e896543/SampleAppReliableMarginsDeemNorth",
+            parentNode: document.querySelector('#jaas-container')
+        });
+    },[])
+    return (
+        <div>
+            <div id="jaas-container" />
+        </div>
+    );
+};
 
 export default App;
